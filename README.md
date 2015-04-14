@@ -690,13 +690,6 @@ Turn off and remove libraries after you upgrade and delete the folders after abo
 
 
 With help/inspiration from:
-
-- Rob Flynn - JD
-- James Holt - JD
-- Timi Abel - JD
-- Richard Holding - JD
-- Adnan Baig - JD
-- Przemek Lewtak - JD
 - [Gov.UK](https://github.com/alphagov)
 - [van der Ende](http://van-der-en.de)
 - [Google HTML/CSS Style Guide](http://google-styleguide.googlecode.com/svn/trunk/htmlcssguide.xml)
