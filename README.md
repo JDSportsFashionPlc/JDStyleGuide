@@ -46,10 +46,10 @@ JD Sports Fashion plc is one of the worlds leading sports fashion retail conglom
 
 ### <a name="code-comments">Indenting</a>
 
- - Every line of code, every snippet, every service layer requires the global JD comment wrapper. You can do this block for html with `<!--` and for any other language as needed. The block contains your name, the date, and also the hashtag of the campaign. So for example all code, libraries and other files you work contains will have this block.
- 
-	```
-	/***
+Every line of code, every snippet, every service layer requires the global JD comment wrapper. You can do this block for html with `<!--` and for any other language as needed. The block contains your name, the date, and also the hashtag of the campaign. So for example all code, libraries and other files you work contains will have this block.
+    
+    
+    /***
 	* --- --- --- --- ---
 	* JD Sports Fashion plc
 	* IBM WebSphere Commerce Platform
@@ -58,76 +58,69 @@ JD Sports Fashion plc is one of the worlds leading sports fashion retail conglom
 	* #JDFRONTENDSPEC
 	* --- --- --- --- ---
 	***/
-	```
- - Generally speaking all code commenting should be used via // and then good annotation of the block in question
- 
-     ```
+	
+	
+Generally speaking all code commenting should be used via // and then good annotation of the block in question
+    
     BAD JavaScript Comments
     // fix for fmd
 	 var f=3;
-    ```
-
-    ```
+    
+    
     GOOD JavaScript Comments
     // VARS
     // -- Fixes .fmd classes in bootstrap
 	 var strFMDInjectionFix = 3;
-	 ```
+	 
+	 
 ### <a name="general-indenting">Indenting</a>
 
-  - Use two spaces to indent. Two spaces is enough space to illustrate heirarchy, but not so much that deeply nested HTML gets out of hand.
+Use two spaces to indent. Two spaces is enough space to illustrate heirarchy, but not so much that deeply nested HTML gets out of hand.
 
-  - Don't use tabs or mix tabs and spaces. Tabs can vary in width for different editors and look especially bad when viewing source-code in the browser.
-
-    ```html
+Don't use tabs or mix tabs and spaces. Tabs can vary in width for different editors and look especially bad when viewing source-code in the browser.
+    
     <ul>
       <li>Felix</li>
       <li>Simba</li>
     </ul>
-    ```
-
-    ```css
+    
+    
     .breeds {
       background: #000000;
       color: #0000FF;
     }
-    ```
 
-    ```javascript
     var purr = function() {
       alert('purr');
     }
-    ```
+    
 
 ### <a name="general-capitalisation">Capitalisation</a>
 
-  - Use only lowercase for all HTML and CSS code. This applies to HTML element names, attributes, attribute values (unless text/CDATA), CSS selectors, properties, and property values (with the exception of strings).
-
-    ```html
+Use only lowercase for all HTML and CSS code. This applies to HTML element names, attributes, attribute values (unless text/CDATA), CSS selectors, properties, and property values (with the exception of strings).
+	
     <!-- bad -->
     <A HREF="http://google.com" title="GREAT search engine">Google</A>
 
     <!-- good -->
     <a href="http://google.com" title="GREAT search engine">Google</a>
-    ```
-
-    ```html
+    
     <!-- bad -->
     <h1 class="LOGO">I Love Cats</h1>
 
     <!-- good -->
     <h1 class="logo">I Love Cats</h1>
-    ```
+    
 
 ### <a name="general-spacing">Spacing</a>
 
-  - Remove trailing whitespaces, they can complicate diffs.
+Remove trailing whitespaces, they can complicate diffs.
 
 ### <a name="general-encoding">Encoding</a>
 
-  - Use UTF-8
+Use UTF-8
 
-  - Specify the encoding in HTML templates and documents via `<meta charset="utf-8">`. Do not specify the encoding of style sheets as these assume UTF-8.
+Specify the encoding in HTML templates and documents via `<meta charset="utf-8">`. Do not specify the encoding of style sheets as these assume UTF-8.
 
 **[[⬆]](#contents)**
 
@@ -137,17 +130,16 @@ JD Sports Fashion plc is one of the worlds leading sports fashion retail conglom
 
 ### <a name="html-general">General</a>
 
-  - Use HTML5: `<!DOCTYPE html>`
+Use HTML5: `<!DOCTYPE html>`
 
-  - Use valid HTML where possible.
+Use valid HTML where possible.
 
-  - Use tools such as the [W3C HTML validator](http://validator.w3.org/nu/) to test.
+Use tools such as the [W3C HTML validator](http://validator.w3.org/nu/) to test.
 
 ### <a name="html-semantics">Semantics</a>
 
-  - Use elements for what they have been created for. Using HTML according to its purpose is important for accessibility, reuse, and code efficiency reasons.
+Use elements for what they have been created for. Using HTML according to its purpose is important for accessibility, reuse, and code efficiency reasons.  
 
-    ```html
     <!-- bad -->
     <div class="header">
       <div class="title">Cat Massage 101</div>
@@ -159,47 +151,42 @@ JD Sports Fashion plc is one of the worlds leading sports fashion retail conglom
       <h1>Cat Massage 101</h1>
       <h2>Keeping your cat happy</h2>
     </header>
-    ```
+    
 
-  - For more information on the specifics of HTML5 elements, see <http://diveintohtml5.info/semantics.html#new-elements>
+For more information on the specifics of HTML5 elements, see <http://diveintohtml5.info/semantics.html#new-elements>
 
 ### <a name="html-style">Style</a>
-
 #### Entities
 
-  - Use entity references like `&pound;`, `&euro;`, `&mdash;`, `&rdquo;`, or `&#x263a;`, as we cannot assume the same encoding (UTF-8) is used for files and editors.
+Use entity references like `&pound;`, `&euro;`, `&mdash;`, `&rdquo;`, or `&#x263a;`, as we cannot assume the same encoding (UTF-8) is used for files and editors.
 
-    ```html
     <!-- good -->
     <p>OMG I &hearts; &hearts; &hearts; CATS</p>
 
     <!-- bad -->
     <p>OMG I ♥ ♥ ♥ CATS</p>
-    ```
 	 
 #### Type attributes
 
-  - Omit `type` attributes for style sheets and scripts.
+Omit `type` attributes for style sheets and scripts.
 
-  - Specifying type attributes in these contexts is not necessary as HTML5 implies text/css and text/javascript as defaults. This can be safely done even for older browsers.
+Specifying type attributes in these contexts is not necessary as HTML5 implies text/css and text/javascript as defaults. This can be safely done even for older browsers.
 
-    ```html
     <!-- bad -->
     <link rel="stylesheet" href="style.css" type="text/css">
-	 <script type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript" charset="utf-8"></script>
 
     <!-- good -->
     <link rel="stylesheet" href="style.css">
-	 <script>
-    ```
+	<script>
+    
 
 ### <a name="html-formatting">Formatting</a>
 
 #### General
 
-  - Use a new line for every block-level element, and indent child elements.
+Use a new line for every block-level element, and indent child elements.
 
-    ```html
     <!-- bad -->
     <header><h1 class="logo"><a href="/">CATSRUS</a></h1></header>
 
@@ -207,20 +194,17 @@ JD Sports Fashion plc is one of the worlds leading sports fashion retail conglom
     <header>
       <h1 class="logo"><a href="/">CATSRUS</a></h1>
     </header>
-    ```
+    
 
-  - If you run into issues around whitespace between list items it’s acceptable to put all li elements in one line.
+If you run into issues around whitespace between list items it’s acceptable to put all li elements in one line.
 
-    ```html
     <!-- ok -->
     <nav>
       <ul>
         <li><a href="/item-1">Item 1</a></li><li><a href="/item-2">Item 2</a></li><li><a href="/item-3">Item 3</a></li>
       </ul>
     </nav>
-    ```
-
-    ```html
+    
     <!-- preferred -->
     <style>
       nav { font-size: 12px; }
@@ -235,61 +219,20 @@ JD Sports Fashion plc is one of the worlds leading sports fashion retail conglom
         <li><a href="/item-3">Item 3</a></li>
       </ul>
     </nav>
-    ```
+    
 
 #### Quote marks
 
-  - Use double (`"`) rather than single (`'`) quote marks around attribute values.
+Use double (`"`) rather than single (`'`) quote marks around attribute values.
 
-    ```html
+    html
     <!-- bad -->
     <a href='/favourite-kittens'>Favourite Kittens</a>
 
     <!-- good -->
     <a href="/favourite-kittens">Favourite Kittens</a>
-    ```
-
-### <a name="minification">Minification</a>
-#### Minification
-
-  - Use this guide as best as possible for .src files - .minify and public files should follow this minification guide
-
-  - Try to use the following when coding - have a dist.js file and src.js or call it min.js or dev.js and make sure you minify before shipping code live - despite Amazon, Akamai and Dyn - we want to use WebSphere Commerce and other platforms best when rendering via minification
-  
-  - CSS minify to one CSS rule per line; also remove spaces and not needed ; etc
-  
-  ```
-    <!-- bad -->
-    .class {
-		 padding: 20px 5px ;
-	 }
-	 .logo {
-		 padding:  5px;
-		 	font-family: arial;
-		  font-weight:bold;
-	 }
-
-    <!-- good -->
-    .class{padding:20px;5px}
-	 .logo{padding:5px;font:Arial bold}
-    ```
-  
-  - HTML and JS should follow the same rule - do not code your fixes on live .min or live .compressed files - do you work and fixes in staging and then compress and re-ship your code.
-  
-  ```
-  HTML/JS
-    <!-- bad -->
-    <h1> 
-	 test </h1>
-	 function foot(f) {
-		 console.log(f);
-	 }
-
-    <!-- good -->
-    <h1>test</h1>
-	 function foot(f){console.log(f);}
-    ```
-
+    
+    
 **[[⬆]](#contents)**
 
 ---------------------------------------------------------------------------------------------------
@@ -298,16 +241,15 @@ JD Sports Fashion plc is one of the worlds leading sports fashion retail conglom
 
 ### <a name="arc-namc">Name Conventions</a>
 
-- Use camel casing; THISISNOTPOOR compared to camelCasing.
-- Use full British English.
-- Do not use slang or name initials; full names, dates and full language.
-- Do not use any profanity and keep it logical and comments most be purposeful.
-- Use generic names and do not spam text for SEO.
-- Use good names for images for better searching.
+Use camel casing; THISISNOTPOOR compared to camelCasing.
+Use full British English.
+Do not use slang or name initials; full names, dates and full language.
+Do not use any profanity and keep it logical and comments most be purposeful.
+Use generic names and do not spam text for SEO.
+Use good names for images for better searching.
 
 ### <a name="arc-fold">Folder Structures</a>
 
-	```
 	GOOD
 	/page/news
 	/page/news/sports
@@ -322,40 +264,37 @@ JD Sports Fashion plc is one of the worlds leading sports fashion retail conglom
 	/lib/www/apps/news/articleViewer.jsp?articleId=302242
 	
 	IMAGES AND MEDIA
-	
 	/assets/media/css/main.css
 	/assets/media/css/product.css
 	/assets/media/imgs/brands/adidas.jpg
 	/assets/media/imgs/jd/jd-sports-logo.jpg
-	```
+
 	
 ### <a name="arc-file">Live/Staging File Names</a>	
-
- - Look at this folder. The src files are code commented. And minified files are for distribution.
+Look at this folder. The src files are code commented. And minified files are for distribution.
  
- ```
- GOOD
- /page/nike/
- /page/nike/index.src.html
- /page/nike/index.html
+    GOOD
+    /page/nike/
+    /page/nike/index.src.html
+    /page/nike/index.html
  
- GOOD
- /page/nike/
- /page/nike/index.dev.html
- /page/nike/index.html
+    GOOD
+    /page/nike/
+    /page/nike/index.dev.html
+    /page/nike/index.html
  
- GOOD
- /page/nike/
- /page/nike/js/dev.js
- /page/nike/js/dev.packed.js
+    GOOD
+    /page/nike/
+    /page/nike/js/dev.js
+    /page/nike/js/dev.packed.js
  
- GOOD
- /page/nike/
- /page/nike/css/framework.css
- /page/nike/css/framework.min.css
- ```
+    GOOD
+    /page/nike/
+    /page/nike/css/framework.css
+    /page/nike/css/framework.min.css
  
- - Always have a .compress, .src or .dist file alternative of your minified file - minified files should be served first. Use GruntJS or any other tool which does good compression without breaking and destroying your JS or CSS.
+ 
+Always have a .compress, .src or .dist file alternative of your minified file - minified files should be served first. Use GruntJS or any other tool which does good compression without breaking and destroying your JS or CSS.
 
 **[[⬆]](#contents)**
 
@@ -365,21 +304,18 @@ JD Sports Fashion plc is one of the worlds leading sports fashion retail conglom
 
 ### <a name="css-general">General</a>
 
-  - Use valid CSS
+Use valid CSS
 
-  - Use tools such as the [W3C CSS validator](http://jigsaw.w3.org/css-validator/) to test.
+Use tools such as the [W3C CSS validator](http://jigsaw.w3.org/css-validator/) to test.
 
 ### <a name="css-style">Style</a>
 
 #### Naming
-
  
+Prefer classes to IDs, classes are reuseable and do not interrupt CSS hierarchy. A good rule of thumb is to *ONLY* use an ID when you need to do something with the element in JavaScript. Styles should almost always be aplpied with a class.
 
-  - Prefer classes to IDs, classes are reuseable and do not interrupt CSS hierarchy. A good rule of thumb is to *ONLY* use an ID when you need to do something with the element in JavaScript. Styles should almost always be aplpied with a class.
+Use meaningful or generic names for IDs and classes. Do not use camelcase CSS names. All CSS should be lowercase and separated with a hyphen.
 
-  - Use meaningful or generic names for IDs and classes. Do not use camelcase CSS names. All CSS should be lowercase and separated with a hyphen.
-
-    ```css
     /* bad */
     .a {}
     .kjs-0922 {}
@@ -387,11 +323,10 @@ JD Sports Fashion plc is one of the worlds leading sports fashion retail conglom
     /* good */
     .video {}
     .street-address {}
-    ```
+    
 
-  - Use names that are as short as possible but as long as necessary.
+Use names that are as short as possible but as long as necessary.
 
-    ```css
     /* bad */
     .navigation {}
     .atr {}
@@ -399,11 +334,10 @@ JD Sports Fashion plc is one of the worlds leading sports fashion retail conglom
     /* good */
     .nav {}
     .author {}
-    ```
+    
 
-  - Separate words in IDs and class names with a hyphen and use only lowercase characters
+Separate words in IDs and class names with a hyphen and use only lowercase characters
 
-    ```css
     /* bad */
     .CHUBBY-CATS {}
     .crazyCats {}
@@ -412,13 +346,12 @@ JD Sports Fashion plc is one of the worlds leading sports fashion retail conglom
 
     /* good */
     .cute-cats {}
-    ```
+    
 
 #### Type selectors
 
-  - Avoid specifying unecessary type selectors or ancestors
+Avoid specifying unecessary type selectors or ancestors
 
-    ```css
     /* bad */
     ul.cats {}
     header.main h1.logo span {}
@@ -426,15 +359,14 @@ JD Sports Fashion plc is one of the worlds leading sports fashion retail conglom
     /* good */
     .cats-list {}
     .logo span {}
-    ```
+   
 
-  - If coding in LESS, avoid Christmas trees by nesting everything. Three levels deep should be plenty.
+If coding in LESS, avoid Christmas trees by nesting everything. Three levels deep should be plenty.
 
 #### Shorthand properties
 
-  - Use them
+Use them
 
-    ```css
     /* bad */
     li {
       border-top-style: none;
@@ -453,13 +385,12 @@ JD Sports Fashion plc is one of the worlds leading sports fashion retail conglom
       font: 100%/1.6 palatino, georgia, serif;
       padding: 0 1em 2em;
     }
-    ```
+    
 
 #### Zeros
 
-  - Don't include units after `0` values unless they are required
+Don't include units after `0` values unless they are required
 
-    ```css
     /* bad */
     li {
       margin: 0em;
@@ -471,64 +402,61 @@ JD Sports Fashion plc is one of the worlds leading sports fashion retail conglom
       margin: 0;
       padding: 0;
     }
-    ```
+    
 
-  - Don't include a leading `0` in values between `-1` and `1`
+Don't include a leading `0` in values between `-1` and `1`
 
-    ```css
     /* bad */
     li { font-size: 0.8em; }
 
     /* good */
     li { font-size: .8em; }
-    ```
+    
 
 #### Colours
 
-  - Use hexadecimal notation
+Use hexadecimal notation
 
-    ```css
     /* bad */
     a { color: rgb(0,0,255); }
 
     /* good */
     a { color: #0000FF; }
-    ```
+    
 
-  - Prefer three character hexadecimal notation where possible
+Prefer three character hexadecimal notation where possible
 
-    ```css
     /* bad */
     p { color: #000000; }
 
     /* good */
     p { color: #000; }
-    ```
+    
 
 #### Hacks
 
-  - Avoid user agent detection as well as CSS "hacks" - try a different approach first.
-  - One exception to this is the "clearfix" hack to force an element to clear it's children. For support in IE8 and up this one is fairly efficient:
+Avoid user agent detection as well as CSS "hacks" - try a different approach first.
 
-    ```css
+One exception to this is the "clearfix" hack to force an element to clear it's children. For support in IE8 and up this one is fairly efficient:
+
     .group:after {
       content: "";
       display: table;
       clear: both;
     }
-    ```
+    
 
 ### <a name="css-formatting">Formatting</a>
 
 #### Declaration order
 
-  - Alphabetise declarations.
+Alphabetise declarations.
 
-  - Put declarations in alphabetical order in order to achieve consistent code in a way that is easy to remember and maintain.
+Put declarations in alphabetical order in order to achieve consistent code in a way that is easy to remember and maintain.
 
-  - Ignore vendor-specific prefixes for sorting purposes. However, multiple vendor-specific prefixes for a certain CSS property should be kept sorted (e.g. -moz prefix comes before -webkit).
+Ignore vendor-specific prefixes for sorting purposes. However, multiple vendor-specific prefixes for a certain CSS property should be kept sorted (e.g. -moz prefix comes before -webkit).
 
-    ```css
+    css
     .main-header {
       background: #000;
       border: #FFF solid 4px;
@@ -538,21 +466,18 @@ JD Sports Fashion plc is one of the worlds leading sports fashion retail conglom
       color: #FFF;
       text-align: center;
     }
-    ```
+    
 
 #### Declaration order
+Indent all block content
 
-  - Indent all block content
-
-    ```css
     /* bad */
     @media screen, projection {
 
-    html {
-    background: #fff;
-    color: #444;
+     html {
+     background: #fff;
+     color: #444;
     }
-
     }
 
     /* good */
@@ -562,15 +487,12 @@ JD Sports Fashion plc is one of the worlds leading sports fashion retail conglom
         background: #fff;
         color: #444;
       }
-
     }
-    ```
 
 #### Declaration stops
+Use a semicolon after every declaration
 
-  - Use a semicolon after every declaration
-
-    ```css
+    
     /* bad */
     li {
       margin: 0;
@@ -586,26 +508,22 @@ JD Sports Fashion plc is one of the worlds leading sports fashion retail conglom
     }
 
     a { color: #FF0000; }
-    ```
+    
 
 #### Spacing
+Use no single space between property and value (and no space between property and colon). There should be no trailing final ;} too. See minification above too
 
-  - Use no single space between property and value (and no space between property and colon). There should be no trailing final ;} too. See minification above too
-
-    ```css
     /* bad */
     h1 { font-weight:bold; }
     h1 { font-weight :bold; }
 
     /* good */
     h1{font-weight:bold}
-    ```
+    
+Use no single space between the last selector and the opening brace that begins the declaration block.  
+The opening brace should be on the same line as the last selector in a given rule.
 
-  - Use no single space between the last selector and the opening brace that begins the declaration block.
-
-  - The opening brace should be on the same line as the last selector in a given rule.
-
-    ```css
+ 
     /* bad */
     .video{
       margin-top: 1em;
@@ -618,11 +536,10 @@ JD Sports Fashion plc is one of the worlds leading sports fashion retail conglom
 
     /* good */
     .video{margin-top:1em}
-    ```
 
-  - You may start a new line for each selector and declaration.
 
-    ```css
+You may start a new line for each selector and declaration.
+
     /* bad */
     input:focus, input:hover {
       background: #FFFF00;
@@ -637,18 +554,16 @@ JD Sports Fashion plc is one of the worlds leading sports fashion retail conglom
 	 /* also good */
 	 input:focus,input:hover{background:#FFFF00;}
 	 
-    ```
 
-  - No blank line (two line breaks) between rules.
+No blank line (two line breaks) between rules.
 
-    ```css
+    
     html{background:#fff;color:#000}
     body{margin:auto;width:50%}
-    ```
+    
 
-  - If you are only declaring one style, write the entire declaration on one line.
+If you are only declaring one style, write the entire declaration on one line.
 
-    ```css
     /* bad */
     a {
       color: #ffffff;
@@ -656,11 +571,11 @@ JD Sports Fashion plc is one of the worlds leading sports fashion retail conglom
 
     /* good */
     a{color:#fff}
-    ```
+    
 
-  - Use single `'` rather than double `"` quotation marks for attribute selectors or property values. Do not use quotation marks in URI values `url()`.
+Use single `'` rather than double `"` quotation marks for attribute selectors or property values. Do not use quotation marks in URI values `url()`.
 
-    ```css
+    css
     /* bad */
     @import url("//www.google.com/css/maia.css");
 
@@ -671,7 +586,7 @@ JD Sports Fashion plc is one of the worlds leading sports fashion retail conglom
     /* good */
     @import url(//www.google.com/css/maia.css);
     html{font-family: 'open sans', arial, sans-serif}
-    ```
+    
 
 **[[⬆]](#contents)**
 
@@ -682,36 +597,36 @@ JD Sports Fashion plc is one of the worlds leading sports fashion retail conglom
 
 ### <a name="javascript-writing">General</a>
 
-- Use the global JD CDN for using the same libraries.
+Use the global JD CDN for using the same libraries.
 
-- Avoid using Public CDN APIs such as Google.
+Avoid using Public CDN APIs such as Google.
 
-- Do not use execessive whitespace.
+Do not use execessive whitespace.
 
-- Check jQuery for conflicts.
+Check jQuery for conflicts.
 
-- Use camel case in functions.
+Use camel case in functions.
 
-    ```
+   
     /* bad */
     function FOOBAR() {}
 
     /* good */
     function fooBar() {}
-    ```
+    
 
-- Use console for testing.
+Use console for testing.
 
-    ```
     /* bad */
     alert('test');
 
     /* good */
     console.log('test');
-    ```
-- Use JSON Lints for JSON validation - avoid big empty nests.
+    
+    
+ Use JSON Lints for JSON validation - avoid big empty nests.
 
-    ```
+    
     /* bad */
     page { pages { pagelist { page1 {} page2{} } } } }
 
@@ -747,23 +662,24 @@ JD Sports Fashion plc is one of the worlds leading sports fashion retail conglom
 					"class":"link",
 					"activeclass":"kotnav-missionstatement"
 			}
-		]
+			]
 		}
 	]
 	}
-    ```
- - Use good cloaking when using Angular
- 
- - ALWAYS serve JS through defer and at the footer of the HTML document
+    
+    
+Use good cloaking when using Angular.
+
+ALWAYS serve JS through defer and at the footer of the HTML document
  
  
 ### <a name="javascript-writing">Frameworks and Libraries</a>
 
-- Use the global JD CDN for using the same libraries.
+Use the global JD CDN for using the same libraries.
 
-- Try to use Amazon CDN or the Akamai buckets for CDN calls; if the library or plugin is out of date, clone the repo and save as .src.backup and apply the same dist and source release updates for making it public - remember to comment and documentate and hashtag the file so it can be updated later
+Try to use Amazon CDN or the Akamai buckets for CDN calls; if the library or plugin is out of date, clone the repo and save as .src.backup and apply the same dist and source release updates for making it public - remember to comment and documentate and hashtag the file so it can be updated later
 
-- Turn off and remove libraries after you upgrade and delete the folders after about a month to ensure to old callbacks - Use JSLint and jsFiddle for testing.
+Turn off and remove libraries after you upgrade and delete the folders after about a month to ensure to old callbacks - Use JSLint and jsFiddle for testing.
 
 **[[⬆]](#contents)**
 
