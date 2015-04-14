@@ -1,7 +1,7 @@
 JD Sports Fashion plc
 ==================
 
-# Front-End Coding Guide (not official yet)
+# Front-End Coding Guide (work in progress)
 
 JD Sports Fashion plc is one of the worlds leading sports fashion retail conglomerates. We have over 35 companies in over 200 countries and have platforms for all brands on mobile, desktop and tablet. This also includes store kiosks and other channels including social and third party vendor sites such as Amazon, eBay and much more. We have a range of platforms from IBM WebSphere Commerce to Magento to Aurora to MESH to Oracle ATG Oracle Retail to IBM DB2 and more.. custom feed driven platforms, custom in-house platforms including custom architecture.. chuck in the fact that we are multi language, multi currency, multi device, multi platform, multi facia and we have multi development teams (globally).. therefore it is imperative that we stick and try to have a consistant codebase across our group.
 
